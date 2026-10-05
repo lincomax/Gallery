@@ -19,7 +19,7 @@ jobs:
           echo "$DEBUG_KEYSTORE" | base64 -d > ~/.android/debug.keystore
           echo "ANDROID_USER_HOME=$HOME/.android" >> $GITHUB_ENV
       - run: chmod +x gradlew && ./gradlew assembleFossDebug
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: gallery-apk
           path: app/build/outputs/apk/foss/debug/*.apk
